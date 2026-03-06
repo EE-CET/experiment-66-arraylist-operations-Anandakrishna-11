@@ -5,33 +5,29 @@ import java.util.Scanner;
 public class ArrayListOperations {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-       
-        int N = sc.nextInt();
-        sc.nextLine();
 
-        String[] items = sc.nextLine().split(" ");
-        ArrayList<String> cart = new ArrayList<>();
+	int n = sc.nextInt();
+        ArrayList<String> items = new ArrayList<>();
 
-        for (int i = 0; i < N; i++) {
-            cart.add(items[i]);
+        for (int i = 0; i < n; i++) {
+            items.add(sc.next());
         }
 
-        Collections.sort(cart);
+        String searchItem = sc.next();
 
-        String searchItem = sc.nextLine();
+        Collections.sort(items);
 
-        System.out.println("Sorted Items: " + cart);
+        System.out.println("Sorted Items: " + items);
 
-            if (N == 3) { 
-            if (cart.contains(searchItem)) {
-                System.out.println("Found");
-            } else {
-                System.out.println("Not Found");
-            }
-        } else {      
+        if (items.contains(searchItem)) {
             System.out.println("Found");
+        } else {
+            System.out.println("Not Found");
         }
 
         sc.close();
+
+
+        
     }
 }
